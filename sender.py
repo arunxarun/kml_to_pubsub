@@ -46,4 +46,3 @@ class Sender:
             byteData = byteData.encode('utf-8')
             logging.debug(byteData)
             self.topic.publish(json.dumps(byteData))
-            

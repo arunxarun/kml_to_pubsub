@@ -55,11 +55,12 @@ def testSendDataWithNullData(getFixtures):
 def testSendDataWithInvalidBatchSize(getFixtures):
 
     try:
-        parsedData = getFixtures.parser.parseData(getFixtures.id,getFixtures.offset,getFixtures.raw_data)
-        assert(parsedData != None)
-        pubsub = "foo"
+        raw_data = getFixtures.raw_data
+        extracted_data = json.loads(raw_data)
+        parsed_data = getFixtures.parser.parseData(getFixtures.id,getFixtures.offset,extracted_data['data'])
+
         sender = Sender(getFixtures.topic)
-        sender.sendData(parsedData,0)
+        sender.sendData(parsed_data,0)
 
     except Exception as ex:
         assert(type(ex) is ValueError)
@@ -68,12 +69,12 @@ def testSendDataWithInvalidBatchSize(getFixtures):
 def testSendDataWithValidParams(getFixtures):
     try:
 
-        parsedData = getFixtures.parser.parseData(getFixtures.id,getFixtures.offset,getFixtures.raw_data)
-        assert(parsedData != None)
-
+        raw_data = getFixtures.raw_data
+        extracted_data = json.loads(raw_data)
+        parsed_data = getFixtures.parser.parseData(getFixtures.id,getFixtures.offset,extracted_data['data'])
 
         sender = Sender(getFixtures.topic)
-        sender.sendData(parsedData,1)
+        sender.sendData(parsed_data,1)
 
     except Exception as ex:
         fail(ex)
