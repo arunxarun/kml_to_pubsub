@@ -31,7 +31,10 @@ class Sender:
             buffer.append(data[i])
             if len(buffer) == batch_size:
                 logging.debug("publishing "+ str(buffer))
-                self.topic.publish(buffer)
+                byteData = json.dumps(buffer)
+                byteData = byteData.encode('utf-8')
+                logging.debug(byteData)
+                self.topic.publish(json.dumps(byteData))
                 del buffer[:]
 
         # handle the leftovers if there are any.
@@ -39,4 +42,8 @@ class Sender:
         leftovers = len(data) % batch_size;
 
         if(leftovers > 0):
-            self.topic.publish(buffer)
+            byteData = json.dumps(buffer)
+            byteData = byteData.encode('utf-8')
+            logging.debug(byteData)
+            self.topic.publish(json.dumps(byteData))
+            
