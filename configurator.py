@@ -11,7 +11,7 @@ class Configurator:
     def __init__(self,config_file):
         loaded_yaml = yaml.load(open(config_file))
         self.config = {}
-        # note that this project needs specific credentials in a specific file location to access google API endpoints.
+        # note that this project needs specific credentials in file specified by config_file to access google API endpoints.
         print loaded_yaml
 
         if loaded_yaml.has_key(ENVVARS) == False:
