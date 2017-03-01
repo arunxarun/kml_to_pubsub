@@ -1,0 +1,28 @@
+language:
+
+python:
+  - 2.7.10
+
+
+env:
+  - env1=dev
+  - #env2=bar
+
+
+build:
+
+  pre_ci:
+    pip install -r requirements.txt
+
+  ci:
+    - pytest test_*.py
+
+  #post_ci:
+    #- #command1
+    #- #command2
+  on_success:
+    - echo 'pass!'
+    #- #command2
+  on_failure:
+    - echo 'fail!'
+    #- #command2
