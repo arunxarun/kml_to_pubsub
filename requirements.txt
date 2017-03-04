@@ -1,7 +1,7 @@
 google-cloud-pubsub==0.22.0
 pytest==3.0.6
-pytest-mock==1.5.0
-Flask==0.12
-Flask-RESTful==0.3.5
+pytest_mock==1.5.0
+flask==0.12
+flask_restful==0.3.5
 python-dateutil==2.6.0
-PyYAML==3.12
+pyyaml==3.12
