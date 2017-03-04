@@ -6,9 +6,10 @@ import logging
 from datetime import datetime
 from sender import Sender
 from parser import Parser
+from google.cloud import pubsub
 import mock
 from mock import patch
-from google.cloud import pubsub
+
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
