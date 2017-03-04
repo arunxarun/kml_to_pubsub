@@ -8,8 +8,6 @@ from sender import Sender
 from parser import Parser
 import mock
 from mock import patch
-
-from pytest_mock import mocker
 from google.cloud import pubsub
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
