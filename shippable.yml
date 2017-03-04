@@ -12,8 +12,6 @@ env:
 build:
 
   pre_ci:
-    - pip install virtualenv
-    - source venv/bin/activate
     - pip install -r requirements.txt
 
 
