@@ -1,4 +1,4 @@
-google-cloud-pubsub==0.22.0
+google-cloud==0.23.0
 pytest
 pytest_mock
 flask==0.12
