@@ -1,0 +1,10 @@
+#[START env]
+env_variables:
+    GOOGLE_PROJECT_ID: key-prism-91820
+    #PUBSUB_TOPIC: testpubsub
+    # This token is used to verify that requests originate from your
+    # application. It can be any sufficiently random string.
+    PUBSUB_VERIFICATION_TOKEN: 1234abc
+    GOOGLE_CLOUD_DISABLE_GRPC: True
+    GOOGLE_APPLICATION_CREDENTIALS: ./key/service-key.json
+#[END env]

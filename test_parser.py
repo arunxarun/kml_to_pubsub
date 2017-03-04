@@ -14,7 +14,7 @@ class TestFixtures:
     def __init__(self):
         self.id = 'foo'
         self.offset = 5
-        f = open("../test_data/short_kml_file.json")
+        f = open("./test_data/short_kml_file.json")
 
         raw_data = json.loads(f.read())
         self.data = raw_data["data"]

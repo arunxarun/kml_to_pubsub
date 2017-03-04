@@ -9,7 +9,7 @@ from configurator import Configurator
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 
-TEST_DATA_DIR = "../test_data/"
+TEST_DATA_DIR = "./test_data/"
 MISSING_PID = TEST_DATA_DIR + "missingPID.yml"
 MISSING_APPCREDS = TEST_DATA_DIR + "missingAppCreds.yml"
 MISSING_DISABLEGRPC = TEST_DATA_DIR + "missingDisableGRPCFlag.yml"

@@ -1,0 +1,45 @@
+{
+  "type":true,
+  "data": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "name": "Morning Ride",
+          "time": "2016-10-09T15:48:54Z",
+          "coordTimes": [
+              "2016-10-09T15:48:54Z",
+              "2016-10-09T15:48:55Z",
+              "2016-10-09T15:48:56Z"
+            ],
+            "heartRates": [
+                79,
+                79,
+                79
+            ]
+        },
+        "geometry": {
+            "type": "LineString",
+            "coordinates": [
+                [
+                    -122.245093,
+                    47.585913,
+                    73.8
+                ],
+                [
+                    -122.245082,
+                    47.585921,
+                    74.4
+                ],
+                [
+                    -122.245075,
+                    47.58594,
+                    75.2
+                ]
+            ]
+        }
+      }
+    ]
+  }
+}
