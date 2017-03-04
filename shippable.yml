@@ -16,7 +16,7 @@ build:
 
 
   ci:
-    - pytest test_*.py
+    - python -m pytest test_*.py
 
   #post_ci:
     #- #command1
