@@ -1,4 +1,4 @@
-language:
+language: python
 
 python:
   - 2.7.10
@@ -12,8 +12,10 @@ env:
 build:
 
   pre_ci:
+    pip install virtualenv
+    source venv/bin/activate
     pip install -r requirements.txt
-    pip install pytest
+
 
   ci:
     - pytest test_*.py
