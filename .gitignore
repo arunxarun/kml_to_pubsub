@@ -3,3 +3,5 @@ __pycache__
 .cache
 venv
 service-key.json
+htmlcov/*
+.coverage

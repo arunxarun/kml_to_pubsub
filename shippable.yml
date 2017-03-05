@@ -18,6 +18,8 @@ build:
   ci:
     - pip install -r requirements.txt
     - python -m pytest test_*.py
+    - coverage run test_*.py --source configurator.py,parser.py,sender.py
+    - coverage report --include configurator.py,parser.py,sender.py
 
   #post_ci:
     #- #command1
