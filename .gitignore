@@ -5,3 +5,4 @@ venv
 service-key.json
 htmlcov/*
 .coverage
+*.xml
