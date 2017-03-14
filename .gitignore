@@ -6,3 +6,4 @@ service-key.json
 htmlcov/*
 .coverage
 *.xml
+.DS_Store
