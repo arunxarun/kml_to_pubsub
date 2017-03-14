@@ -1,4 +1,0 @@
-google.cloud.proto.speech
-google.cloud.proto
-google.cloud
-google
