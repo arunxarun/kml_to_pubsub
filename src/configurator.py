@@ -1,7 +1,7 @@
 import yaml
 import os
 from sender import Sender
-from parser import Parser
+from dataparser import DataParser
 import logging
 from google.cloud import pubsub
 
@@ -52,5 +52,5 @@ class Configurator:
         return Sender(topic)
 
 
-    def getParser(self):
-        return Parser()
+    def getDataParser(self):
+        return DataParser()

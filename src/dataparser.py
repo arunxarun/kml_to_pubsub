@@ -5,7 +5,7 @@ from datetime import timedelta
 import json
 
 
-class Parser:
+class DataParser:
     def parseData(self,id, offset, data):
         if id == None:
             raise ValueError("expecting non null ID")

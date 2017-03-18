@@ -5,7 +5,7 @@ from pytest import fail
 import json
 import logging
 from datetime import datetime
-from parser import Parser
+from dataparser import DataParser
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
@@ -28,7 +28,7 @@ def getFixtures():
 def testParseDataWithMissingId(getFixtures):
 
     try:
-        parser = Parser()
+        parser = DataParser()
         parsedData = parser.parseData(None,getFixtures.offset,getFixtures.data)
         fail("parser.parseData should have thrown an error on null id")
     except Exception as ex:
@@ -36,7 +36,7 @@ def testParseDataWithMissingId(getFixtures):
 
 def testParseDataWithMissingOffSet(getFixtures):
     try:
-        parser = Parser()
+        parser = DataParser()
         parsedData = parser.parseData(getFixtures.id,None,getFixtures.data)
         fail("parser.parseData should have thrown an error on null offset")
     except Exception as ex:
@@ -45,7 +45,7 @@ def testParseDataWithMissingOffSet(getFixtures):
 
 def testParseDataWithNullData(getFixtures):
     try:
-        parser = Parser()
+        parser = DataParser()
         parsedData = parser.parseData(getFixtures.id,1,None)
         fail("parser.parseData should have thrown an error on null data")
     except Exception as ex:
@@ -54,7 +54,7 @@ def testParseDataWithNullData(getFixtures):
 
 def testParseDataWithNonJsonData(getFixtures):
     try:
-        parser = Parser()
+        parser = DataParser()
         data = "this is not JSON"
         parsedData = parser.parseData(getFixtures.id,1,data)
         fail("parser.parseData should have thrown an error on non JSON data")
@@ -64,7 +64,7 @@ def testParseDataWithNonJsonData(getFixtures):
 
 def testParseDataWithInvalidJsonData(getFixtures):
     try:
-        parser = Parser()
+        parser = DataParser()
         data = {'foobar':'goo'}
         parsedData = parser.parseData(getFixtures.id,1,data)
         fail("parser.parseData should have thrown an error on incorrect JSON data")
@@ -73,7 +73,7 @@ def testParseDataWithInvalidJsonData(getFixtures):
 
 def testParsedDataWithValidArgs(getFixtures):
     try:
-        parser = Parser()
+        parser = DataParser()
         parsedData = parser.parseData(getFixtures.id,getFixtures.offset,getFixtures.data)
         assert(parsedData != None)
         #logging.debug(parsedData)
@@ -92,7 +92,7 @@ def testParsedDataWithValidArgs(getFixtures):
 
 
 def testOffsetTimeGenerationWithInvalidArgs(getFixtures):
-    parser = Parser()
+    parser = DataParser()
     try:
 
         strTimeNow = "2016-10-09T15:48:54"
@@ -103,7 +103,7 @@ def testOffsetTimeGenerationWithInvalidArgs(getFixtures):
 
 def testOffsetTimeGeneration(getFixtures):
     try:
-        parser = Parser()
+        parser = DataParser()
 
         strTimeNow = "2016-10-09T15:48:54Z"
         dtOffset = parser.getOffsetTime(strTimeNow, getFixtures.offset)

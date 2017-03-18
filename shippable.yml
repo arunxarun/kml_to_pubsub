@@ -16,7 +16,6 @@ build:
 
 
   ci:
-    - cd src
     - pip install -r requirements.txt
     - python -m pytest test_*.py
     - mkdir -p shippable/codecoverage

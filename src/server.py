@@ -8,7 +8,7 @@ from webargs.flaskparser import use_args, use_kwargs, parser, abort
 import json
 from datetime import datetime
 from datetime import timedelta
-from parser import Parser
+from dataparser import DataParser
 from sender import Sender
 from configurator import Configurator
 
@@ -22,7 +22,7 @@ CONFIG_FILE = "./app.yml"
 
 configurator = Configurator(CONFIG_FILE)
 sender = configurator.getSender()
-parser = configurator.getParser()
+dataparser = configurator.getDataParser()
 
 
 class Publish(Resource):
