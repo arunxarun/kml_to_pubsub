@@ -25,6 +25,7 @@ build:
   #post_ci:
     #- #command1
     #- #command2
+    #- #command3
   on_success:
     - echo 'pass!'
     #- #command2
