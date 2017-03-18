@@ -17,6 +17,7 @@ build:
 
   ci:
     - pip install -r requirements.txt
+    - cd src
     - python -m pytest test_*.py
     - mkdir -p shippable/codecoverage
     - coverage run --branch test_*.py --source configurator.py,parser.py,sender.py
